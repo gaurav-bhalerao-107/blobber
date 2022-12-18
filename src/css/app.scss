@@ -1,0 +1,12 @@
+// app global css in SCSS form
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.q-page-container {
+    padding-top: 0px !important;
+}
+
+.max-width-handler{
+    max-width: 1750px;
+}
