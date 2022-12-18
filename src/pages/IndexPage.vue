@@ -197,19 +197,25 @@ export default defineComponent({
 
   methods: {
     domToImage(){
+      let self = this;
+
+      self.$q.loading.show();
       let node = document.getElementsByClassName('blob')[0]
       domtoimage.toPng(node)
-      .then(function (dataUrl) {
+      .then((dataUrl) => {
           var img = new Image();
           img.src = dataUrl;
+
+          self.$q.loading.hide();
 
           const downloadLink = document.createElement("a");
           downloadLink.href = dataUrl;
           downloadLink.download = 'blobber.png';
           downloadLink.click();
       })
-      .catch(function (error) {
-          console.error('oops, something went wrong!', error);
+      .catch((error) => {
+        console.error('oops, something went wrong!', error);
+        self.$q.loading.hide();
       });
     },
 
@@ -247,8 +253,8 @@ export default defineComponent({
   .blob {
     width: 360px;
     height: 360px;
-    background-color: #21D4FD;
-    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-color: #7f00ff;
+    background: linear-gradient(to right, #7f00ff, #e100ff);
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     z-index: 2;
   }
