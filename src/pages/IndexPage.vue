@@ -29,7 +29,7 @@
             <div class="tw-relative tw-mb-5 tw-z-10">
               <div class="card_background tw-shadow-lg tw-py-10 tw-px-0 md:tw-px-12 tw-h-full tw-w-full  tw-flex tw-items-center tw-justify-center">
                 <div class="blob" :style="{'border-radius': blob_parameters.radius_1 + '%' + blob_parameters.radius_2 + '%' + blob_parameters.radius_3 + '%' + blob_parameters.radius_4 + '%' + '/' + blob_parameters.radius_5 + '%' + blob_parameters.radius_6 + '%' + blob_parameters.radius_7 + '%' + blob_parameters.radius_8 + '%'}"></div>
-                <div  class="tw-absolute tw-mx-auto tw-mt-10" style="cursor: pointer; bottom: -30px"> 
+                <div  class="tw-absolute tw-mx-auto tw-mt-12" style="cursor: pointer; bottom: -30px"> 
                   <!-- random -->
                   <q-icon @click="randomBlobGenerator()" name="refresh" class="text-white tw-bg-indigo-600 tw-p-5 tw-rounded-xl" style="font-size: 2em;" /> 
                   
@@ -46,7 +46,7 @@
               </div>
             </div>
 
-            <div class="tw-flex-1 lg:tw-pl-5 tw-grid tw-grid-cols-1 tw-gap-8 md:tw-grid-cols-2 tw-mt-5 lg:tw-mt-0">
+            <div class="tw-flex-1 lg:tw-pl-5 tw-grid tw-grid-cols-1 tw-gap-8 md:tw-grid-cols-2 tw-mt-7 lg:tw-mt-0">
               <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
                 <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 1</label>
                 <q-slider
@@ -265,11 +265,7 @@ export default defineComponent({
   .moving-blob{
     width: 500px;
     height: 500px;
-    background: linear-gradient(
-      180deg,
-      rgba(47, 184, 255,0.42) 31.77%,
-      #5c9df1 100%
-    );
+    background: linear-gradient(180deg, rgba(47, 184, 255,0.42) 31.77%, #5c9df1 100%);
     -webkit-animation: move 25s infinite alternate; 
     animation: move 10s infinite alternate;
     transition: 1s cubic-bezier(0.1, 0.7, 1.0, 0.1);
