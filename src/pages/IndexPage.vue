@@ -168,6 +168,7 @@
 import CardVue from "src/components/Card.vue";
 import { defineComponent } from "vue";
 import domtoimage from 'dom-to-image';
+import _ from 'lodash';
 
 export default defineComponent({
   name: "IndexPage",
