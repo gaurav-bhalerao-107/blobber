@@ -2,7 +2,7 @@
   <section class="index-page tw-relative">
     <main class="tw-relative tw-bg-white hero-wrapper tw-w-full">
       <div class="tw-w-full">
-        <div class="moving-blob tw-absolute tw-inset-0 tw-mx-auto tw-mt-5"></div>
+        <div class="moving-blob tw-fixed tw-inset-0 tw-mx-auto tw-mt-5"></div>
       </div>
       <main class="tw-relative tw-z-10">
         <div class="tw-pt-28">
@@ -27,7 +27,7 @@
         <div class="max-width-handler tw-px-3 sm:tw-px-5 lg:tw-px-10 tw-w-full">
           <div class="tw-flex tw-flex-col tw-py-10 lg:tw-flex-row tw-justify-between tw-w-full">
             <div class="tw-relative tw-mb-5 tw-z-10">
-              <div class="tw-bg-gray-100 tw-shadow-lg tw-py-10 tw-px-0 md:tw-px-12 tw-h-full tw-w-full  tw-flex tw-items-center tw-justify-center">
+              <div class="card_background tw-shadow-lg tw-py-10 tw-px-0 md:tw-px-12 tw-h-full tw-w-full  tw-flex tw-items-center tw-justify-center">
                 <div class="blob" :style="{'border-radius': blob_parameters.radius_1 + '%' + blob_parameters.radius_2 + '%' + blob_parameters.radius_3 + '%' + blob_parameters.radius_4 + '%' + '/' + blob_parameters.radius_5 + '%' + blob_parameters.radius_6 + '%' + blob_parameters.radius_7 + '%' + blob_parameters.radius_8 + '%'}"></div>
                 <div  class="tw-absolute tw-mx-auto tw-mt-10" style="cursor: pointer; bottom: -30px"> 
                   <!-- random -->
@@ -47,8 +47,8 @@
             </div>
 
             <div class="tw-flex-1 lg:tw-pl-5 tw-grid tw-grid-cols-1 tw-gap-8 md:tw-grid-cols-2 tw-mt-5 lg:tw-mt-0">
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10 tw-mb-5">
-                <label class="tw-font-semibold tw-text-xl">Radius 1</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 1</label>
                 <q-slider
                   v-model="blob_parameters.radius_1" 
                   :min="0" 
@@ -61,8 +61,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10 tw-mb-5">
-                <label class="tw-font-semibold tw-text-xl">Radius 2</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 2</label>
                 <q-slider
                   v-model="blob_parameters.radius_2" 
                   :min="0" 
@@ -75,8 +75,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10">
-                <label class="tw-font-semibold tw-text-xl">Radius 3</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 3</label>
                 <q-slider
                   v-model="blob_parameters.radius_3" 
                   :min="0" 
@@ -89,8 +89,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10">
-                <label class="tw-font-semibold tw-text-xl">Radius 4</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 4</label>
                 <q-slider
                   v-model="blob_parameters.radius_4" 
                   :min="0" 
@@ -103,8 +103,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10 tw-mb-5">
-                <label class="tw-font-semibold tw-text-xl">Radius 5</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 5</label>
                 <q-slider
                   v-model="blob_parameters.radius_5" 
                   :min="0" 
@@ -117,8 +117,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10 tw-mb-5">
-                <label class="tw-font-semibold tw-text-xl">Radius 6</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 6</label>
                 <q-slider
                   v-model="blob_parameters.radius_6" 
                   :min="0" 
@@ -131,8 +131,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10 tw-mb-5">
-                <label class="tw-font-semibold tw-text-xl">Radius 7</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 7</label>
                 <q-slider
                   v-model="blob_parameters.radius_7" 
                   :min="0" 
@@ -145,8 +145,8 @@
                   inner-track-color="transparent"
                 />
               </div>
-              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg tw-bg-gray-100 tw-z-10 tw-mb-5">
-                <label class="tw-font-semibold tw-text-xl">Radius 8</label>
+              <div class="tw-w-full tw-px-5 tw-pb-7 tw-pt-3 tw-shadow-lg card_background tw-z-10 tw-mb-5">
+                <label class="tw-text-black tw-font-semibold tw-text-xl">Radius 8</label>
                 <q-slider
                   v-model="blob_parameters.radius_8" 
                   :min="0" 
@@ -326,5 +326,15 @@ export default defineComponent({
       /* transform: translate(100%, 10px) rotate(-90deg); */
       border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
     }
+  }
+
+  .card_background{
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 1rem;
+    color: whitesmoke;
   }
 </style>
