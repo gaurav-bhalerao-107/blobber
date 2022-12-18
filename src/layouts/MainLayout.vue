@@ -1,8 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="tw-isolate tw-bg-white">
+    <q-header class="tw-isolate tw-bg-transparent">
       <header>
-        <div class="tw-px-6 tw-py-4 lg:tw-px-8">
+        <div class="tw-relative tw-z-10 tw-px-6 tw-py-4 lg:tw-px-8">
           <div class="tw-flex tw-w-full tw-items-center tw-justify-center">
             <a href="">
               <span class="tw-font-bold tw-text-indigo-600 text-center tw-text-5xl">Blobber</span>
