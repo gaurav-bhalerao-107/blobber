@@ -25,23 +25,45 @@
 
       <main class="tw-relative tw-flex tw-items-center tw-justify-center tw-w-full">
         <div class="max-width-handler tw-px-3 sm:tw-px-5 lg:tw-px-10 tw-w-full">
-          <div class="tw-flex tw-flex-col tw-py-10 lg:tw-flex-row tw-justify-between tw-w-full">
+          <div class="card_background tw-shadow-lg tw-mt-7 tw-py-5 tw-px-5 tw-h-full tw-w-full  tw-flex tw-items-center tw-justify-between">
+            <div class="tw-flex tw-items-center tw-justify-center">
+              <div class="tw-pr-5">
+                <q-icon  name="color" :style="{'color': blob_color_1, 'background': blob_color_1}" class="tw-p-2 sm:tw-p-5 tw-rounded-xl" style="font-size: 2em; cursor: pointer"> 
+                  <q-popup-proxy transition-show="scale" transition-hide="scale">
+                    <q-color v-model="blob_color_1" />
+                  </q-popup-proxy>
+                </q-icon> 
+              </div>
+              <div class="">
+                <q-icon  name="color" :style="{'color': blob_color_2, 'background': blob_color_2}" class="tw-p-2 sm:tw-p-5 tw-rounded-xl" style="font-size: 2em; cursor: pointer"> 
+                  <q-popup-proxy transition-show="scale" transition-hide="scale">
+                    <q-color v-model="blob_color_2" />
+                  </q-popup-proxy>
+                </q-icon> 
+              </div>
+            </div>
+
+            <div class="">
+              <button @click="domToImage()" class="tw-flex tw-items-center tw-bg-transparent hover:tw-bg-blue-500 tw-text-blue-700 tw-font-semibold hover:tw-text-white tw-py-2 sm:tw-py-4 tw-px-5 sm:tw-px-10 tw-border tw-border-blue-500 hover:tw-border-transparent tw-rounded">
+                <svg class="tw-fill-current tw-w-4 tw-h-4 tw-mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                <span>Download</span>
+              </button>
+            </div>
+          </div>
+          <div class="tw-flex tw-flex-col tw-py-5 sm:tw-py-8 lg:tw-flex-row tw-justify-between tw-w-full">
             <div class="tw-relative tw-mb-5 tw-z-10">
               <div class="card_background tw-shadow-lg tw-py-10 tw-px-0 md:tw-px-12 tw-h-full tw-w-full  tw-flex tw-items-center tw-justify-center">
-                <div class="blob" :style="{'border-radius': blob_parameters.radius_1 + '%' + blob_parameters.radius_2 + '%' + blob_parameters.radius_3 + '%' + blob_parameters.radius_4 + '%' + '/' + blob_parameters.radius_5 + '%' + blob_parameters.radius_6 + '%' + blob_parameters.radius_7 + '%' + blob_parameters.radius_8 + '%'}"></div>
-                <div  class="tw-absolute tw-mx-auto tw-mt-12" style="cursor: pointer; bottom: -30px"> 
-                  <!-- random -->
-                  <q-icon @click="randomBlobGenerator()" name="refresh" class="text-white tw-bg-indigo-600 tw-p-5 tw-rounded-xl" style="font-size: 2em;" /> 
-                  
-                  <!-- download -->
-                  <q-icon @click="domToImage()" name="download" class="text-white tw-bg-indigo-600 tw-p-5 tw-rounded-xl tw-mx-2" style="font-size: 2em;" /> 
-                  
-                  <!-- color -->
-                  <!-- <q-icon  name="color" class="tw-text-red-700 tw-bg-red-700 tw-p-5 tw-rounded-xl" style="font-size: 2em;"> 
-                    <q-popup-proxy transition-show="scale" transition-hide="scale">
-                      <q-color v-model="blob_color" />
-                    </q-popup-proxy>
-                  </q-icon>  -->
+                <div class="blob" :style="{
+                  'border-radius': blob_parameters.radius_1 + '%' + blob_parameters.radius_2 + '%' + blob_parameters.radius_3 + '%' + blob_parameters.radius_4 + '%' + '/' + blob_parameters.radius_5 + '%' + blob_parameters.radius_6 + '%' + blob_parameters.radius_7 + '%' + blob_parameters.radius_8 + '%',
+                  'background-color': blob_color_1,
+                  'background': 'linear-gradient(to right,' + blob_color_1 + ',' + blob_color_2 + ')'
+                  }">
+                </div>
+                
+                <!-- random and download button -->
+                <div  class="tw-absolute tw-mx-auto tw-mt-12" style="cursor: pointer; bottom: -30px">
+                  <q-icon @click="randomBlobGenerator()" name="refresh" class="text-white tw-bg-indigo-600 tw-p-5 tw-rounded-xl" style="font-size: 2em;" />
+                  <!-- <q-icon @click="domToImage()" name="download" class="text-white tw-bg-indigo-600 tw-p-5 tw-rounded-xl tw-mx-2" style="font-size: 2em;" />  -->
                 </div>
               </div>
             </div>
@@ -194,7 +216,8 @@ export default defineComponent({
         radius_7: 60,
         radius_8: 40,
       },
-      blob_color: '#FF00FFCC'
+      blob_color_1: '#7f00ff',
+      blob_color_2: '#e100ff'
     };
   },
 
@@ -256,8 +279,6 @@ export default defineComponent({
   .blob {
     width: 360px;
     height: 360px;
-    background-color: #7f00ff;
-    background: linear-gradient(to right, #7f00ff, #e100ff);
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     z-index: 2;
   }
@@ -332,5 +353,9 @@ export default defineComponent({
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-radius: 1rem;
     color: whitesmoke;
+  }
+
+  .index-page .my-picker {
+    max-width: 250px
   }
 </style>
